@@ -23,8 +23,8 @@ public class WebCrawler {
         public static String getContentOfWebPage(URL url) {
             final StringBuilder content = new StringBuilder();
             try (InputStream is = url.openConnection().getInputStream();
-                 InputStreamReader in = new InputStreamReader(is, StandardCharsets.UTF_8);
-                 BufferedReader br = new BufferedReader(in)) {
+                InputStreamReader in = new InputStreamReader(is, StandardCharsets.UTF_8);
+                BufferedReader br = new BufferedReader(in)) {
                 String inputLine;
                 while ((inputLine = br.readLine()) != null) {
                     content.append(inputLine);
