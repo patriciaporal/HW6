@@ -66,7 +66,7 @@ public class WebCrawler {
 
     public static void main(String[] args) throws MalformedURLException {
         toVisit.add(new URL("https://vasart.github.io/supreme-potato/"));
-        ExecutorService executorService = Executors.newFixedThreadPool(10);
+        ExecutorService executorService = Executors.newFixedThreadPool(5);
         while (!toVisit.isEmpty()) {
             executorService.submit(new UrlVisitor());
         }
