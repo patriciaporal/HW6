@@ -22,11 +22,11 @@ public class WebCrawler {
     public static class UrlVisitor implements Runnable {
         public static String getContentOfWebPage(URL url) {
             final StringBuilder content = new StringBuilder();
-                try (InputStream is = url.openConnection().getInputStream();
+            try (InputStream is = url.openConnection().getInputStream();
                     InputStreamReader in = new InputStreamReader(is, StandardCharsets.UTF_8);
                     BufferedReader br = new BufferedReader(in)) {
                 String inputLine;
-                while(( inputLine = br.readLine() ) != null) content.append(inputLine);
+                while ((inputLine = br.readLine()) != null) content.append(inputLine);
             } catch (IOException e) {
                 System.out.println("Failed to retrieve content of " + url.toString());
                 e.printStackTrace();
