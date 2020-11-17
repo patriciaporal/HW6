@@ -29,7 +29,7 @@ public class WebCrawlerTest {
         }
         System.out.println(WebCrawler.alreadyVisited);
         System.out.println(WebCrawler.toVisit);
-        Assert.assertEquals(4, WebCrawler.alreadyVisited.size());
+        Assert.assertEquals(3, WebCrawler.alreadyVisited.size());
     }
 
     @Test
