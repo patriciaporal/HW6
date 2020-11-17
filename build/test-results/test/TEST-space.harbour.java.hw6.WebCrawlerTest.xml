@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="space.harbour.java.hw6.WebCrawlerTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-11-17T07:11:56" hostname="Patricias-MacBook-Air.local" time="5.02">
+  <properties/>
+  <testcase name="test3" classname="space.harbour.java.hw6.WebCrawlerTest" time="5.02"/>
+  <system-out><![CDATA[[https://vasart.github.io/supreme-potato/, https://vasart.github.io/supreme-potato/experience.html, https://vasart.github.io/supreme-potato/education.html, https://vasart.github.io/supreme-potato/social.html]
+[]
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
