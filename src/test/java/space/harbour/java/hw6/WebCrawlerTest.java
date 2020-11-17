@@ -1,14 +1,17 @@
 package space.harbour.java.hw6;
 
-import org.junit.Test;
-
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 
-import static org.junit.Assert.*;
+import org.junit.Test;
+
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 import static space.harbour.java.hw6.WebCrawler.alreadyVisited;
 import static space.harbour.java.hw6.WebCrawler.toVisit;
 
@@ -67,7 +70,7 @@ public class WebCrawlerTest {
         try {
             executorService.awaitTermination(5, TimeUnit.SECONDS);
             if (executorService.isTerminated()) {
-                System.err.println("Timed out waiting for executor to terminate cleanly. Shutting down.");
+                System.err.println("Timed out waiting for executor to terminate cleanly. Shutting dow   n.");
                 executorService.shutdownNow();
             }
         } catch (InterruptedException e) {
