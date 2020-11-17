@@ -25,7 +25,7 @@ public class WebCrawler {
             try (InputStream is = url.openConnection().getInputStream();
                     InputStreamReader in = new InputStreamReader(is, StandardCharsets.UTF_8);
                     BufferedReader br = new BufferedReader(in)) {
-                        String inputLine;
+                String inputLine;
                 while ((inputLine = br.readLine()) != null) {
                     content.append(inputLine);
                 }
