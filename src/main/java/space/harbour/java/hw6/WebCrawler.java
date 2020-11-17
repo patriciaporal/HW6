@@ -51,9 +51,9 @@ public class WebCrawler {
 
                     while (matcher.find()) {
                         try {
-                            URL newURL = new URL(matcher.group());
-                            if (!toVisit.contains(newURL) && !alreadyVisited.contains(newURL)) {
-                                toVisit.add(newURL);
+                            URL newUrl = new URL(matcher.group());
+                            if (!toVisit.contains(newUrl) && !alreadyVisited.contains(newUrl)) {
+                                toVisit.add(newUrl);
                             }
                         } catch (MalformedURLException e) {
                             e.printStackTrace();
@@ -64,23 +64,23 @@ public class WebCrawler {
         }
     }
 
-        public static void main(String[] args) throws MalformedURLException {
-            toVisit.add(new URL("https://vasart.github.io/supreme-potato/"));
-            ExecutorService executorService = Executors.newFixedThreadPool(10);
-            while (!toVisit.isEmpty()) {
-                executorService.submit(new UrlVisitor());
-            }
-            try {
-                executorService.awaitTermination(5, TimeUnit.SECONDS);
-                if (executorService.isTerminated()) {
-                    System.err.println("Timed out waiting for executor to terminate cleanly. Shutting down.");
-                    executorService.shutdownNow();
-                }
-            } catch (InterruptedException e) {
-                System.err.println("Interrupted while waiting for executor shutdown.");
-                Thread.currentThread().interrupt();
-            }
-            System.out.println(alreadyVisited);
-            System.out.println(toVisit);
+    public static void main(String[] args) throws MalformedURLException {
+        toVisit.add(new URL("https://vasart.github.io/supreme-potato/"));
+        ExecutorService executorService = Executors.newFixedThreadPool(10);
+        while (!toVisit.isEmpty()) {
+            executorService.submit(new UrlVisitor());
         }
+        try {
+            executorService.awaitTermination(5, TimeUnit.SECONDS);
+            if (executorService.isTerminated()) {
+                System.err.println("Timed out waiting for executor to terminate cleanly. Shutting down.");
+                executorService.shutdownNow();
+            }
+        } catch (InterruptedException e) {
+            System.err.println("Interrupted while waiting for executor shutdown.");
+            Thread.currentThread().interrupt();
+        }
+        System.out.println(alreadyVisited);
+        System.out.println(toVisit);
     }
+}
